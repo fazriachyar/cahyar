@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<title>🏡 Ruang Rindu 🏡</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+<style>
+    body,
+    h1 {
+        font-family: "Raleway", sans-serif
+    }
+
+    body,
+    html {
+        height: 100%
+    }
+
+    .bgimg {
+        background-image: url(img/back.jpg);
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .button:hover span {
+        padding-right: 25px;
+    }
+
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    .ml6 {
+        position: relative;
+        font-weight: 900;
+        font-size: 4.3em;
+    }
+
+    .ml6 .text-wrapper {
+        position: relative;
+        display: inline-block;
+        padding-top: 0.2em;
+        padding-right: 0.05em;
+        padding-bottom: 0.1em;
+        overflow: hidden;
+    }
+
+    .ml6 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+
+    .ml11 {
+        font-weight: 700;
+        font-size: 3.5em;
+    }
+
+    .ml11 .text-wrapper {
+        position: relative;
+        display: inline-block;
+        padding-top: 0.1em;
+        padding-right: 0.05em;
+        padding-bottom: 0.15em;
+    }
+
+    .ml11 .line {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: #fff;
+        transform-origin: 0 50%;
+    }
+
+    .ml11 .line1 {
+        top: 0;
+        left: 0;
+    }
+
+    .ml11 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+
+    .ml13 {
+        font-size: 2.0em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+
+    .trail { /* className for the trail elements */
+    position: absolute;
+    height: 6px; width: 6px;
+    border-radius: 3px;
+    background: teal;
+  }
+</style>
+
+<body>
+
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+
+        <h1 class="ml11 w3-display-topleft w3-padding-large w3-xlarge">
+            <span class="text-wrapper">
+                <span class="line line1"></span>
+                <span class="letters">Ruang Rindu</span>
+            </span>
+        </h1>
+
+        <div class="w3-display-middle">
+            <script> 
+                var today = new Date();
+                var hourNow = today.getHours();
+                var greeting;
+
+                if (hourNow > 18) {
+                    greeting = 'Selamat Malam';
+                } else if (hourNow > 12) {
+                    greeting = 'Selamat Sore';
+                } else if (hourNow > 0) {
+                    greeting = 'Selamat Pagi';
+                } else {
+                    greeting = 'Selamat Datang';
+                }
+                document.write('<h1>' + greeting + '</h1>')
+            </script>
+            <h1 class="ml6">
+                <span class="text-wrapper">
+                    <span class="letters">Cahya Septia</span>
+                </span>
+            </h1>
+            <hr class="w3-border-grey" style="margin:auto;width:40%">
+            <br>
+            <div id="quoteDisplay">
+
+            </div>
+            <br>
+            <button onclick="newQuote()" class="w3-animate-top">Biarlah seperti ini.</button>
+            <script src="javascript.js">
+
+            </script>
+
+            <audio id="myAudio">
+                <source src="song2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <br>
+            <br>
+            <button onclick="playAudio()" type="button">⏩️</button>
+            <button onclick="pauseAudio()" type="button">⏹️</button>
+
+            <script>
+                var x = document.getElementById("myAudio");
+
+                function playAudio() {
+                    x.play();
+                }
+
+                function pauseAudio() {
+                    x.pause();
+                } 
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
